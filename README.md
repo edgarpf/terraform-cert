@@ -1,6 +1,6 @@
 # HashiCorp Certified: Terraform Associate
 * You don't have to specify a provider block since Terraform is smart enough to download the right provider based on the specified resources.
-* To upgrade an existing provider that you have already downloaded, you need to run ***terraform init -upgrade***
+* To upgrade an existing provider that you have already downloaded, you need to run ***terraform init -upgrade***.
 * Using ***terraform apply -replace*** is how you tag a resource for replacement. Useful in case Terraform reports that a resource was created but the local script did not run properly.
 * Single Sign-On is a feature of Terraform Enterprise and Terraform Cloud for Business. It is NOT available in Terraform Cloud (free tier).
 * State is a hard requirement for Terraform - there's no getting around it. You can have state stored locally or you can configure a remote backend to store it somewhere else. But overall, state is always required.
