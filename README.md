@@ -1,6 +1,4 @@
 # terraform-cert
-Tips for HashiCorp Certified: Terraform Associate 
-
 * You don't have to specify a provider block since Terraform is smart enough to download the right provider based on the specified resources.
 * To upgrade an existing provider that you have already downloaded, you need to run ***terraform init -upgrade***
 * Using ***terraform apply -replace*** is how you tag a resource for replacement. Useful in case Terraform reports that a resource was created but the local script did not run properly.
