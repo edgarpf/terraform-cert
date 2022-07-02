@@ -38,5 +38,41 @@ To delete a resource from state, you can use the ***terraform state rm address c
 * Use ***terraform apply -refresh-only*** if an engineer makes a change outside of Terraform, what command can you run to detect drift and update the state file?
 * Workspaces in OSS are often used within the same working directory while workspaces in Enterprise/Cloud are often (but not required) mapped to unique repos.
 * A terraform apply will actually run its own "plan" to make sure it knows what resources to update.
-
-
+* Terraform ***destroy*** will always prompt for confirmation before executing unless passed the -auto-approve flag.
+* ***join("-", ["svr", "prd", "web"])*** will result in ***svr-prd-web***.
+* ***lookup({a="hello", b="goodbye"}, "c", "what?")*** will result in "what?".
+* You can use modules from a private registry, like the one provided by Terraform Cloud.
+* Both the ***terraform get*** and ***terraform init*** commands will install and update modules. The ***terraform init*** command will also initialize backends and install plugins.
+* It is important to consider that Terraform reads from data sources during the ***plan*** phase and writes the result into the plan.
+* Terraform Enterprise offers the ability to use Terraform to deploy infrastructure in your local on-premises datacenter as well as a public cloud platform, such as AWS, Azure, or GCP.
+* The constructs in the Terraform language can also be expressed in ***JSON*** syntax, which is harder for humans to read and edit but easier to generate and parse programmatically.
+* By default, terraform init downloads plugins into a subdirectory of the working directory, .terraform/providers so that each working directory is self-contained.
+* The Terraform language uses the following types for its values: string, number, bool, list (or tuple), map (or object. There are no other supported variable types in Terraform.
+* A Terraform Enterprise install that is provisioned on a network that does not have Internet access is generally known as an ***air-gapped install***.
+* Terraform can limit the number of concurrent operations as Terraform walks the graph using the ***-parallelism=n***  argument. The default value for this setting is ***10***. This setting might be helpful if you're running into API rate limits.
+* Starting with Terraform 0.13 and above, ***terraform init*** can now automatically download community providers.
+* The ***terraform workspace select*** command is used to choose a different workspace to use for further operations.
+* The terraform state command is used for advanced state management. Rather than modify the state directly, the terraform state commands can be used in many cases instead.
+* The ***terraform import*** command is used to import existing resources into Terraform. This allows you to take resources that you’ve created by some other means and bring them under Terraform management. Note that terraform import DOES NOT generate configuration, it only modifies state.
+* ***tostring*** is not a string function, it is a type conversion function. ***tostring*** converts its argument to a string value.
+* ***terraform force-unlock*** removes the lock on the state for the current configuration. Be very careful forcing an unlock, as it could cause data corruption and problems with your state file.
+* An ***alias*** meta-argument is used when using the same provider with different configurations for different resources.
+* The terraform apply -refresh-only command is used to reconcile the state Terraform knows about (via its state file) with the real-world infrastructure. This can be used to detect any drift from the last-known state, and to update the state file. This does not modify infrastructure but does modify the state file. If the state is changed, this may cause changes to occur during the next plan or apply.
+* Single Sign-On, Sentinel and Audit Logging are NOT available in Terraform OSS or Terraform Cloud (free).
+* The ***terraform validate*** command validates the configuration files in a directory, referring only to the configuration and not accessing any remote services such as remote state, provider APIs, etc.
+* The ***terraform apply -replace*** command manually marks a Terraform-managed resource for replacement, forcing it to be destroyed and recreated on the apply execution.
+You could also use ***terraform destroy -target virtual machine*** and destroy only the virtual machine and then run a terraform apply again.
+* HashiCorp style conventions suggest you that align the equals sign for consecutive arguments for easing readability for configurations.
+* Terraform analyzes any expressions within a resource block to find references to other objects and treats those references as implicit ordering requirements when creating, updating, or destroying resources.
+* Modules also have output values, which are defined within the module with the output keyword. You can access them by referring to ***module.MODULE NAME.OUTPUT NAME***.
+* Terraform has detailed logs that can be enabled by setting the ***TF_LOG*** environment variable to any value. This will cause detailed logs to appear on stderr.
+* Each Terraform workspace uses its own state file to manage the infrastructure associated with that particular workspace.
+* The ***terraform workspace new*** command is used to create a new workspace.
+* There is no Terraform binary for Unix. Terraform is available for macOS, FreeBSD, OpenBSD, Linux, Solaris, Windows. 
+* Currently, Terraform has no mechanism to redact or protect secrets that are returned via data sources, so secrets read via this provider will be persisted into the Terraform state, into any plan files, and in some cases in the console output produced while planning and applying. These artifacts must, therefore, all be protected accordingly.
+* If you introduce a new provider Terraform needs to download the plugin to support the new resource that he has added. A terraform init will download the Infoblox plugin. Once that is complete, a plan and apply can be executed as needed.
+* The ***depends_on*** argument is accepted by any resource and accepts a list of resources to create explicit dependencies for.
+* If a resource is successfully created but fails during provisioning, Terraform will error and mark the resource as "tainted". A resource that is tainted has been physically created, but can't be considered safe to use since provisioning failed.
+* You can use ***required_version*** to ensure that a user deploying infrastructure is using Terraform 0.12 or greater, due to the vast number of changes that were introduced. As a result, many previously written configurations had to be converted or rewritten.
+* The ***terraform console*** command provides an interactive console for evaluating expressions.
+* 
