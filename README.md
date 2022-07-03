@@ -85,4 +85,11 @@ You could also use ***terraform destroy -target virtual machine*** and destroy o
 * Workspaces, managed with the terraform workspace command, isn't the same thing as Terraform Cloud's workspaces. Terraform Cloud workspaces act more like completely separate working directories.
 * The ***terraform show*** command is used to provide human-readable output from a state or plan file. This can be used to inspect a plan to ensure that the planned operations are expected, or to inspect the current state as Terraform sees it.
 * API and CLI access are managed with API tokens, which can be generated in the Terraform Cloud UI. Each user can generate any number of personal API tokens, which allow access with their own identity and permissions. Organizations and teams can also generate tokens for automating tasks that aren't tied to an individual user.
+* A local value assigns a name to an expression, so you can use it multiple times within a module without repeating it.
+* Terraform did not download a newer version of the module. It reused the existing one if you remove the constraint from the configuration file and ran a terraform init again:
+* If you don't provide a backend configuration, Terraform will use the local default backend. Remote Backends are completely optional. 
+* The ***terraform import*** command is used to import existing resources into Terraform. However, Terraform will not create a configuration for the imported resource. The Terraform operator must create/add a configuration for the resource that will be imported first. Once the configuration is added to the configuration file, the terraform import command can be executed to manage the resource using Terraform.
+* ***terraform validate*** requires an initialized working directory with any referenced plugins and modules installed. If you don't initiate the directory, you will get an error stating you need to run a ***terraform init***.
+* The optional ***-out*** flag can be used to save the generated plan to a file for later execution with ***terraform apply***, which can be useful when running Terraform in automation.
+* The ***-upgrade*** will upgrade all previously-selected plugins to the newest version that complies with the configuration's version constraints.
 * 
