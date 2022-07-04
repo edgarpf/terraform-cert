@@ -92,4 +92,11 @@ You could also use ***terraform destroy -target virtual machine*** and destroy o
 * ***terraform validate*** requires an initialized working directory with any referenced plugins and modules installed. If you don't initiate the directory, you will get an error stating you need to run a ***terraform init***.
 * The optional ***-out*** flag can be used to save the generated plan to a file for later execution with ***terraform apply***, which can be useful when running Terraform in automation.
 * The ***-upgrade*** will upgrade all previously-selected plugins to the newest version that complies with the configuration's version constraints.
-* 
+* ***terraform apply -destroy*** and ***terraform destroy*** are the same thing.
+* When using a Terraform provisioned, you would declare the provisioned inside of a resource block to determine when the provisioner should be executed.
+* Backends are configured with a nested backend block within the top-level terraform block.
+* By default, ***fmt*** scans the current directory for configuration files and formats them according to the HCP canonical style and format. However, if you need it to also scan and format files in sub-directories, you can use the ***-recursive*** flag to instruct ***terraform fmt*** to also process files in subdirectories.
+* Running a ***terraform state list*** does not cause Terraform to refresh its state. ***terraform plan*** does.
+* If a module or provider is marked as official, it is owned and maintained by HashiCorp themselves. 
+* The ***terraform graph*** command is used to generate a visual representation of either a configuration or execution plan. 
+* Whenever a configuration's backend changes, you must run ***terraform init*** again to validate and configure the backend before you can perform any plans, applies, or state operations. Re-running init with an already-initialized backend will update the working directory to use the new backend settings. Either ***-reconfigure*** or ***-migrate-state*** must be supplied to update the backend configuration.
