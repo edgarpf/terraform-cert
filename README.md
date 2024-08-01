@@ -29,4 +29,12 @@
 * If supported by your backend, Terraform will lock your state for all operations that could write state. This prevents others from acquiring the lock and potentially corrupting your state.
 * API and CLI access are managed with API tokens, which can be generated in the Terraform Cloud UI.
 * However, if you need even more detailed logging, you can set the TF_LOG environment variable to TRACE.
+* ```terraform init -upgrade``` command perform update all previously installed plugins and modules to the newest version that complies with the configuration’s version constraints.
+* To prevent a Terraform configuration from being executed if it contains a specific string, you can use Sentinel or Open Policy Agent (OPA) to enforce policy checks.
+* The terraform apply -refresh-only command is used to reconcile the state Terraform knows about (via its state file) with the real-world infrastructure.
+* Terraform is designed to work with almost any infrastructure that provides an API. Terraform is very frequently used to provision infrastructure atop VMware infrastructure, along with traditional, physical security or infrastructure service solutions.
+* If the state has drifted from the last time Terraform ran,```terraform plan -refresh-only``` or ```terraform apply -refresh-only``` allows drift to be detected.
+* If no explicit plan file is given on the command line, ```terraform apply``` will create a new plan automatically and prompt for approval to apply it.
+* The optional -out flag can be used to save the generated plan to a file for later execution with ```terraform apply```, which can be useful when running Terraform in automation.
+* Terraform Cloud agents are lightweight programs deployed within your target infrastructure environment. Their primary function is to receive Terraform plans from Terraform Cloud, execute those plans locally, and apply the desired infrastructure changes.
 * 
