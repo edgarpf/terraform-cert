@@ -37,4 +37,7 @@
 * If no explicit plan file is given on the command line, ```terraform apply``` will create a new plan automatically and prompt for approval to apply it.
 * The optional -out flag can be used to save the generated plan to a file for later execution with ```terraform apply```, which can be useful when running Terraform in automation.
 * Terraform Cloud agents are lightweight programs deployed within your target infrastructure environment. Their primary function is to receive Terraform plans from Terraform Cloud, execute those plans locally, and apply the desired infrastructure changes.
+* Whenever a configuration's backend changes, you must run terraform init again to validate and configure the backend before you can perform any plans, applies, or state operations. Re-running init with an already-initialized backend will update the working directory to use the new backend settings. Either -reconfigure or -migrate-state must be supplied to update the backend configuration.
+* Unlike many other objects in the Terraform language, a provider block may be omitted if its contents would otherwise be empty. Terraform assumes an empty default configuration for any provider that is not explicitly configured. In other words, if you don't have any specific configurations for your provider, you may indeed leave it out of your configuration.
+* The ```terraform graph``` command is used to generate a visual representation of either a configuration or execution plan. 
 * 
