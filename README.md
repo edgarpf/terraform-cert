@@ -45,4 +45,3 @@
 * The ```terraform version``` command is used to display the currently installed version of Terraform on your system.
 * The ```terraform login``` command can be used to automatically obtain and save an API token for Terraform Cloud, Terraform Enterprise, or any other host that offers Terraform services.
 * The ```terraform output``` command in Terraform is used to display the values of outputs defined in the Terraform configuration.
-* 
