@@ -4,7 +4,7 @@
 * Terraform requires a state file to store information about the current state of infrastructure resources.
 * The correct additional parameter required to use multiple provider blocks of the same type with distinct configurations is the "alias" parameter.
 * The two Terraform commands used to download and update modules are:
-  * ```terraform init``: This command downloads and updates the required modules for the Terraform configuration. It also sets up the backend for state storage if specified in the configuration.
+  * ```terraform init```: This command downloads and updates the required modules for the Terraform configuration. It also sets up the backend for state storage if specified in the configuration.
   * ```terraform get```: This command is used to download and update modules for a Terraform configuration.
 * The correct Terraform command to launch the Interactive console is "terraform console". This command allows users to evaluate and experiment with expressions in an interactive manner.
 * ~>: Allows only the rightmost version component to increment.
