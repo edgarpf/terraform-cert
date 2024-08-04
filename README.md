@@ -40,4 +40,9 @@
 * Whenever a configuration's backend changes, you must run terraform init again to validate and configure the backend before you can perform any plans, applies, or state operations. Re-running init with an already-initialized backend will update the working directory to use the new backend settings. Either -reconfigure or -migrate-state must be supplied to update the backend configuration.
 * Unlike many other objects in the Terraform language, a provider block may be omitted if its contents would otherwise be empty. Terraform assumes an empty default configuration for any provider that is not explicitly configured. In other words, if you don't have any specific configurations for your provider, you may indeed leave it out of your configuration.
 * The ```terraform graph``` command is used to generate a visual representation of either a configuration or execution plan. 
+* The ```terraform workspace show``` command is used to output the current workspace.
+* A module that has been called by another module is often referred to as a child module.
+* The ```terraform version``` command is used to display the currently installed version of Terraform on your system.
+* The ```terraform login``` command can be used to automatically obtain and save an API token for Terraform Cloud, Terraform Enterprise, or any other host that offers Terraform services.
+* The ```terraform output``` command in Terraform is used to display the values of outputs defined in the Terraform configuration.
 * 
